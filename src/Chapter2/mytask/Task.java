@@ -1,0 +1,19 @@
+package Chapter2.mytask;
+
+import Chapter2.extthread.Thread1;
+
+/**
+ * Created by Omeprazole on 2017/7/13.
+ */
+public class Task {
+    public void doLongTimeTask(){
+        for(int i =0 ;i<100;i++){
+            System.out.println("nosynchronized threadName="+ Thread.currentThread().getName()+"i="+(i+1));
+        }
+        synchronized (this){
+            for(int i =0 ;i<100;i++){
+                System.out.println("synchronized threadName="+ Thread.currentThread().getName()+"i="+(i+1));
+            }
+        }
+    }
+}
